@@ -1,0 +1,42 @@
+{
+  "name": "react-webpack-4-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbaias/react-webpack-4-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mbaias/react-webpack-4-boilerplate/issues"
+  },
+  "homepage": "https://github.com/mbaias/react-webpack-4-boilerplate#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.1",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "cssnano": "^4.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.2",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^5.3.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "dependencies": {
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1"
+  }
+}
