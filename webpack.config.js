@@ -1,3 +1,4 @@
+// /* eslint-disable */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -13,9 +14,18 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        enforce: 'pre',
         exclude: /node_modules/,
         use: {
-          loader: ['babel-loader', 'eslint-loader'],
+          loader: 'babel-loader',
+        },
+      },
+      {
+        test: /\.js$/,
+        enforce: 'pre',
+        exclude: /node_modules/,
+        use: {
+          loader: 'eslint-loader',
         },
       },
       {
