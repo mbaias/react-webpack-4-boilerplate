@@ -4,10 +4,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/index.js'],
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.[chunkhash].js'
+    filename: 'main.[chunkhash].js',
   },
   module: {
     rules: [
@@ -15,14 +15,19 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: ['babel-loader', 'eslint-loader'],
+        },
       },
       {
         test: /\.css$/,
-        use: ['style-loader', MiniCssExtractPlugin.loader,  'css-loader', 'postcss-loader']
-      }
-    ]
+        use: [
+          'style-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+        ],
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin('dist', {}),
@@ -30,7 +35,7 @@ module.exports = {
       template: './src/index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[chunkhash].css'
-    })
-  ]
-}
+      filename: '[name].[chunkhash].css',
+    }),
+  ],
+};
